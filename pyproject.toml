@@ -1,0 +1,116 @@
+[project]
+name = "Opdracht-CE-delft"
+description = "Uitvoering van de opdracht voor CE-delft."
+readme = "README.md"
+version = "0.1.1"
+requires-python = ">=3.12.0"
+authors = [
+    { name = "Arthur Groot Zevert", email = "arthurgrootzevert@outlook.com" },
+]
+
+dependencies = [
+    "scipy",
+    "pandas",
+    "pandera[pandas]",
+    "loguru",
+    "python-dotenv",
+    "numpy",
+    "mypy",
+    "ruff",
+    "ipykernel",
+    "plotly",
+    "ipython",
+    "openpyxl",
+]
+
+
+[dependency-groups]
+dev = [
+    "vscodedebugvisualizer",
+    "pytest-cov",
+    "pytest",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+# [project.urls]
+# "Homepage" = ""
+
+[tool.ruff]
+line-length = 100
+
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+    ".venv",
+]
+
+[tool.ruff.lint]
+select = [
+    "F", # Pyflakes rules
+    "E", # PyCodeStyle errors
+    "I", # Sort imports properly
+    # "W",        # PyCodeStyle warnings
+    "UP",     # Warn if certain things can changed due to newer Python versions
+    "C4",     # Catch incorrect use of comprehensions, dict, list, etc
+    "ISC",    # Good use of string concatenation
+    "ICN001", # Use common import conventions
+    "RET503", # Checks for missing explicit return statements
+    "PTH",    # Use pathlib instead of os.path
+    "TD",     # Diligent with TODO comments
+    "NPY",    # Numpy-specific things
+    "RUF",    # Ruff lint
+    "Q",      # Linting rules for quotes
+    "B",      # flake8-bugbear,
+    "A",      # detect shadowed builtins
+    "BLE",    # disallow catch-all exceptions
+]
+
+ignore = [
+    "B018",  # Allow "useless expressions" for code cell outputs
+    "TD003", # Don't require issue link for each TODO
+]
+
+unfixable = ["F"]
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "_.*"
+
+[tool.ruff.format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"
