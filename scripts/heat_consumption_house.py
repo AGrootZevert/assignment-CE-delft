@@ -15,6 +15,8 @@ from src.visualization.visualize_heat_consumption import visualize_with_average
 
 def main():
     # %% Load and process the temperature data
+    
+    # Set the name of the file to read!
     data = TemperatureDataLoader.load_temperature_data(
         "temperature_data_bilt_20250101_to_2025_12_31.txt"
     )
