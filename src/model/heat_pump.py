@@ -7,10 +7,10 @@ import pandas as pd
 class HeatPump:
     """Class containing all the information to define a heat pump"""
 
-    COP: float
-
     def get_COP(self, temperature: pd.Series) -> float:
-        """Compute the temperature dependent COP
+        """Compute the temperature dependent COP. Formula taken from
+        https://docs.energytransitionmodel.com/main/heat-pumps/ for space heating using air source
+        heat pumps
 
         Args:
             temperature (pd.Series): The outside temperature [C]
@@ -18,4 +18,4 @@ class HeatPump:
         Returns:
             float: The COP of the heat pump
         """
-        return self.COP
+        return 3.25 + 0.0875 * temperature

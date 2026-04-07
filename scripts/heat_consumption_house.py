@@ -24,8 +24,7 @@ def main():
     RC = 2.5  # RC value for 1992. https://vkmakelaars.nl/blog/bouwkundig-advies/aan-het-bouwjaar-van-je-woning-zien-hoe-die-geisoleerd-is/
 
     house = House(average_heat_transfer_coefficient=1 / RC, shell_area=400)
-    # COP airconditioning 3.5-5: https://en.wikipedia.org/wiki/Coefficient_of_performance
-    heat_pump = HeatPump(COP=4)
+    heat_pump = HeatPump()
 
     # %% determine the temperature setpoint
     hourly_data[HeatData.setpoint_temperature_C] = 15.0  # night temperature
