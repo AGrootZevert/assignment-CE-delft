@@ -1,7 +1,7 @@
 import pandas as pd
 
-from constants import W_TO_KW
-from model.heat_pump import HeatPump
+from src.constants import W_TO_KW
+from src.model.heat_pump import HeatPump
 from src.model.house import House
 
 
