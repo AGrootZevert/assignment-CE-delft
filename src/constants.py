@@ -1,0 +1,1 @@
+W_TO_KW = 1e-3 # Conversion of W to KW
