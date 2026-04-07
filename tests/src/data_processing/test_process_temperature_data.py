@@ -20,11 +20,16 @@ def input_data() -> DataFrame[RawTemperatureData]:
 
 def test__get_date_and_time(input_data: DataFrame[RawTemperatureData]):
     """Check if the correct date and hour are obtained"""
-    output_data = TemperatureDataProcessor._get_date_and_time(input_data)
-
-    pd.testing.assert_frame_equal(
-        output_data, input_data[[RawTemperatureData.YYYYMMDD, RawTemperatureData.HH]]
+    output_data = TemperatureDataProcessor._get_date_time_and_hour(input_data)
+    expected = pd.DataFrame(
+        {
+            RawTemperatureData.YYYYMMDD: pd.to_datetime(
+                [2025010100, 2025010201, 2025010302], format="%Y%m%d%H"
+            ),
+            RawTemperatureData.HH: input_data[RawTemperatureData.HH].values,
+        }
     )
+    pd.testing.assert_frame_equal(output_data, expected)
 
 
 def test__get_temperature_C(input_data: DataFrame[RawTemperatureData]):
