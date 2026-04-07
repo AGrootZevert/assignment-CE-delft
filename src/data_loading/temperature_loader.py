@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from loguru import logger
 from pandera.typing import DataFrame
 
-from data_structures.data_structures import RawTemperatureData
+from src.data_structures.data_structures import RawTemperatureData
 
 # Load the enviroment variables
 load_dotenv()

@@ -2,7 +2,7 @@ import pandas as pd
 from loguru import logger
 from pandera.typing import DataFrame
 
-from data_structures.data_structures import RawTemperatureData, TemperatureData
+from src.data_structures.data_structures import RawTemperatureData, TemperatureData
 
 
 class TemperatureDataProcessor:
@@ -30,7 +30,7 @@ class TemperatureDataProcessor:
         # Validate the processed temperature data
         TemperatureData.validate(processed_data)
 
-        # Dataset seems complete
+        # Dataset is complete
         # Optional TODO: Clean the incoming data.
 
         logger.debug("Temperature data processed succesfully")
