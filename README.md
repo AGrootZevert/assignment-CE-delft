@@ -33,7 +33,7 @@ It should look like this:
 
 ```python
 # path to the data storage
-TEMPERATURE_DATA_PATH = "YOUR_PATH"
+TEMPERATURE_DATA_PATH = "YOUR_PATH_TO_DATA_LOCATION"
 ```
 
 ## 5. Using the repository
